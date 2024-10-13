@@ -1,218 +1,234 @@
 public class Main {
 
-    // Utility class for bitwise operations and basic arithmetic
+    // BitwiseUtility class contains methods for performing bitwise operations on long, int, short, and byte types.
     public static class BitwiseUtility {
 
-        // Method to set a specific bit (turn to 1) at the given index for a long number
+        // Sets a bit at the specified bitIndex in a long number.
         public long setBit(long number, int bitIndex) {
-            return number | (1L << bitIndex);
+            return number | (1L << bitIndex); // OR operation with shifted bit to set the bit.
         }
 
-        // Method to set a specific bit (turn to 1) at the given index for an int number
+        // Sets a bit at the specified bitIndex in an int number.
         public int setBit(int number, int bitIndex) {
-            return number | (1 << bitIndex);
+            return number | (1 << bitIndex); // OR operation with shifted bit to set the bit.
         }
 
-        // Method to set a specific bit (turn to 1) at the given index for a short number
+        // Sets a bit at the specified bitIndex in a short number.
         public short setBit(short number, int bitIndex) {
-            return (short) (number | (1 << bitIndex));
+            return (short) (number | (1 << bitIndex)); // OR operation with shifted bit to set the bit.
         }
 
-        // Method to set a specific bit (turn to 1) at the given index for a byte number
+        // Sets a bit at the specified bitIndex in a byte number.
         public byte setBit(byte number, int bitIndex) {
-            return (byte) (number | (1 << bitIndex));
+            return (byte) (number | (1 << bitIndex)); // OR operation with shifted bit to set the bit.
         }
 
-        // Method to clear a specific bit (turn to 0) at the given index for a long number
+        // Clears a bit at the specified bitIndex in a long number.
         public long clearBit(long number, int bitIndex) {
-            return number & ~(1L << bitIndex);
+            return number & ~(1L << bitIndex); // AND operation with negated shifted bit to clear the bit.
         }
 
-        // Method to clear a specific bit (turn to 0) at the given index for an int number
+        // Clears a bit at the specified bitIndex in an int number.
         public int clearBit(int number, int bitIndex) {
-            return number & ~(1 << bitIndex);
+            return number & ~(1 << bitIndex); // AND operation with negated shifted bit to clear the bit.
         }
 
-        // Method to clear a specific bit (turn to 0) at the given index for a short number
+        // Clears a bit at the specified bitIndex in a short number.
         public short clearBit(short number, int bitIndex) {
-            return (short) (number & ~(1 << bitIndex));
+            return (short) (number & ~(1 << bitIndex)); // AND operation with negated shifted bit to clear the bit.
         }
 
-        // Method to clear a specific bit (turn to 0) at the given index for a byte number
+        // Clears a bit at the specified bitIndex in a byte number.
         public byte clearBit(byte number, int bitIndex) {
-            return (byte) (number & ~(1 << bitIndex));
+            return (byte) (number & ~(1 << bitIndex)); // AND operation with negated shifted bit to clear the bit.
         }
 
-        // Method to toggle (flip) a specific bit for a long number
+        // Toggles (flips) a bit at the specified bitIndex in a long number.
         public long toggleBit(long number, int bitIndex) {
-            return number ^ (1L << bitIndex);
+            return number ^ (1L << bitIndex); // XOR operation with shifted bit to toggle the bit.
         }
 
-        // Method to toggle (flip) a specific bit for an int number
+        // Toggles (flips) a bit at the specified bitIndex in an int number.
         public int toggleBit(int number, int bitIndex) {
-            return number ^ (1 << bitIndex);
+            return number ^ (1 << bitIndex); // XOR operation with shifted bit to toggle the bit.
         }
 
-        // Method to toggle (flip) a specific bit for a short number
+        // Toggles (flips) a bit at the specified bitIndex in a short number.
         public short toggleBit(short number, int bitIndex) {
-            return (short) (number ^ (1 << bitIndex));
+            return (short) (number ^ (1 << bitIndex)); // XOR operation with shifted bit to toggle the bit.
         }
 
-        // Method to toggle (flip) a specific bit for a byte number
+        // Toggles (flips) a bit at the specified bitIndex in a byte number.
         public byte toggleBit(byte number, int bitIndex) {
-            return (byte) (number ^ (1 << bitIndex));
+            return (byte) (number ^ (1 << bitIndex)); // XOR operation with shifted bit to toggle the bit.
         }
 
-        // Method to check if a specific bit is set (1) for a long number
+        // Checks if a bit at the specified bitIndex is set in a long number.
         public boolean getBit(long number, int bitIndex) {
-            return (number & (1L << bitIndex)) != 0;
+            return (number & (1L << bitIndex)) != 0; // AND operation with shifted bit to check if the bit is set.
         }
 
-        // Method to check if a specific bit is set (1) for an int number
+        // Checks if a bit at the specified bitIndex is set in an int number.
         public boolean getBit(int number, int bitIndex) {
-            return (number & (1 << bitIndex)) != 0;
+            return (number & (1 << bitIndex)) != 0; // AND operation with shifted bit to check if the bit is set.
         }
 
-        // Method to check if a specific bit is set (1) for a short number
+        // Checks if a bit at the specified bitIndex is set in a short number.
         public boolean getBit(short number, int bitIndex) {
-            return (number & (1 << bitIndex)) != 0;
+            return (number & (1 << bitIndex)) != 0; // AND operation with shifted bit to check if the bit is set.
         }
 
-        // Method to check if a specific bit is set (1) for a byte number
+        // Checks if a bit at the specified bitIndex is set in a byte number.
         public boolean getBit(byte number, int bitIndex) {
-            return (number & (1 << bitIndex)) != 0;
+            return (number & (1 << bitIndex)) != 0; // AND operation with shifted bit to check if the bit is set.
         }
 
-        // Basic arithmetic methods
+        // Adds two long numbers and returns the result.
         public long add(long a, long b) {
-            return a + b;
+            return a + b; // Simple addition operation.
         }
 
+        // Subtracts two long numbers and returns the result.
         public long subtract(long a, long b) {
-            return a - b;
+            return a - b; // Simple subtraction operation.
         }
 
+        // Multiplies two long numbers and returns the result.
         public long multiply(long a, long b) {
-            return a * b;
+            return a * b; // Simple multiplication operation.
         }
 
-        // Division method with check to prevent division by zero
+        // Divides two long numbers and returns the result, checks for division by zero.
         public long divide(long a, long b) {
             if (b == 0) {
-                throw new IllegalArgumentException("Division by zero is not allowed.");
+                throw new IllegalArgumentException("Division by zero is not allowed."); // Check for division by zero.
             }
-            return a / b;
+            return a / b; // Division operation.
         }
 
-        // Method to convert a decimal number to its binary string representation
+        // Converts a decimal number to its binary string representation.
         public String decimalToBinary(long number) {
-            return Long.toBinaryString(number);
+            return Long.toBinaryString(number); // Converts decimal to binary string.
         }
 
-        // Method to convert a decimal number to its hexadecimal string representation
+        // Converts a decimal number to its hexadecimal string representation.
         public String decimalToHexadecimal(long number) {
-            return Long.toHexString(number);
+            return Long.toHexString(number); // Converts decimal to hexadecimal string.
         }
 
-        // Method to convert a binary string to its decimal representation
+        // Converts a binary string to its decimal representation.
         public long binaryToDecimal(String binaryString) {
-            return Long.parseLong(binaryString, 2);
+            return Long.parseLong(binaryString, 2); // Converts binary string to decimal.
         }
 
-        // Method to convert a hexadecimal string to its decimal representation
+        // Converts a hexadecimal string to its decimal representation.
         public long hexadecimalToDecimal(String hexString) {
-            return Long.parseLong(hexString, 16);
+            return Long.parseLong(hexString, 16); // Converts hexadecimal string to decimal.
         }
     }
 
-    // Class representing the checkers board using bitboards
+    // CheckersBitboard class handles the game logic for checkers using bitwise operations on bitboards.
     public static class CheckersBitboard {
 
-        private long blackPieces;  // Bitboard for black pieces
-        private long whitePieces;  // Bitboard for white pieces
-        private BitwiseUtility bitwiseUtility;  // Instance of BitwiseUtility for manipulating the bitboard
+        private long blackPieces; // Stores the position of black pieces on the board as a bitboard.
+        private long whitePieces; // Stores the position of white pieces on the board as a bitboard.
+        private BitwiseUtility bitwiseUtility; // Instance of the BitwiseUtility class to perform bitwise operations.
 
-        // Constructor to initialize the board with starting positions
+        // Constructor initializes the starting positions of black and white pieces on the checkers board.
         public CheckersBitboard() {
-            bitwiseUtility = new BitwiseUtility();
-            blackPieces = 0xFFF0000000000L;  // Black pieces start in the top rows
-            whitePieces = 0x00000FFF00000L;  // White pieces start in the bottom rows
+            bitwiseUtility = new BitwiseUtility(); // Creates an instance of BitwiseUtility.
+            blackPieces = 0xFFF0000000000L; // Initializes black pieces' positions (top 3 rows of the board).
+            whitePieces = 0x00000FFF00000L; // Initializes white pieces' positions (bottom 3 rows of the board).
         }
 
-        // Method to display the current board state in binary format
+        // Displays the current state of the black and white pieces in binary format.
         public void displayBoardInBinary() {
             System.out.println("Black Pieces (Binary): " + bitwiseUtility.decimalToBinary(blackPieces));
             System.out.println("White Pieces (Binary): " + bitwiseUtility.decimalToBinary(whitePieces));
         }
 
-        // Method to display the current board state in hexadecimal format
+        // Displays the current state of the black and white pieces in hexadecimal format.
         public void displayBoardInHexadecimal() {
             System.out.println("Black Pieces (Hexadecimal): " + bitwiseUtility.decimalToHexadecimal(blackPieces));
             System.out.println("White Pieces (Hexadecimal): " + bitwiseUtility.decimalToHexadecimal(whitePieces));
         }
 
-        // Method to move a piece from sourceIndex to destinationIndex
+        // Moves a piece from sourceIndex to destinationIndex for the specified player (black or white).
         public void movePiece(int sourceIndex, int destinationIndex, boolean isBlack) {
             if (isBlack) {
-                // Clear the bit at the source position and set the bit at the destination for black pieces
-                blackPieces = bitwiseUtility.clearBit(blackPieces, sourceIndex);
-                blackPieces = bitwiseUtility.setBit(blackPieces, destinationIndex);
+                blackPieces = bitwiseUtility.clearBit(blackPieces, sourceIndex); // Clear the bit at sourceIndex for black pieces.
+                blackPieces = bitwiseUtility.setBit(blackPieces, destinationIndex); // Set the bit at destinationIndex for black pieces.
             } else {
-                // Clear the bit at the source position and set the bit at the destination for white pieces
-                whitePieces = bitwiseUtility.clearBit(whitePieces, sourceIndex);
-                whitePieces = bitwiseUtility.setBit(whitePieces, destinationIndex);
+                whitePieces = bitwiseUtility.clearBit(whitePieces, sourceIndex); // Clear the bit at sourceIndex for white pieces.
+                whitePieces = bitwiseUtility.setBit(whitePieces, destinationIndex); // Set the bit at destinationIndex for white pieces.
             }
         }
 
-        // Method to check if a move to a destination is legal (i.e., the square is empty)
+        // Checks if a move to destinationIndex is legal by ensuring no pieces occupy that square.
         public boolean isMoveLegal(int destinationIndex) {
-            return !bitwiseUtility.getBit(blackPieces | whitePieces, destinationIndex);
+            return !bitwiseUtility.getBit(blackPieces | whitePieces, destinationIndex); // Ensure no piece is at destinationIndex.
         }
 
-        // Method to check if a capture move is possible
+        // Checks if a capture move is possible: opponent's piece is at opponentIndex, destinationIndex is free.
         public boolean canCapture(int sourceIndex, int opponentIndex, int destinationIndex, boolean isBlack) {
-            // Check if destination is empty and opponent's piece is at the opponentIndex
-            return !bitwiseUtility.getBit(blackPieces | whitePieces, destinationIndex)
-                    && bitwiseUtility.getBit(isBlack ? whitePieces : blackPieces, opponentIndex);
+            return !bitwiseUtility.getBit(blackPieces | whitePieces, destinationIndex) // Check if destination is empty.
+                    && bitwiseUtility.getBit(isBlack ? whitePieces : blackPieces, opponentIndex); // Check if opponent's piece is at opponentIndex.
         }
 
-        // Method to perform a capture move
+        // Captures an opponent's piece if a capture is legal and moves the player's piece to destinationIndex.
         public void capturePiece(int sourceIndex, int opponentIndex, int destinationIndex, boolean isBlack) {
             if (canCapture(sourceIndex, opponentIndex, destinationIndex, isBlack)) {
-                // Clear the opponent's piece from the board
                 if (isBlack) {
-                    whitePieces = bitwiseUtility.clearBit(whitePieces, opponentIndex);
+                    whitePieces = bitwiseUtility.clearBit(whitePieces, opponentIndex); // Clear the bit for the captured white piece.
                 } else {
-                    blackPieces = bitwiseUtility.clearBit(blackPieces, opponentIndex);
+                    blackPieces = bitwiseUtility.clearBit(blackPieces, opponentIndex); // Clear the bit for the captured black piece.
                 }
-                // Move the capturing piece to the destination
-                movePiece(sourceIndex, destinationIndex, isBlack);
+                movePiece(sourceIndex, destinationIndex, isBlack); // Move the piece after capture.
             }
         }
     }
 
-    // Main method demonstrating the bitboard checkers functionality
     public static void main(String[] args) {
-        BitwiseUtility util = new BitwiseUtility();  // Create an instance of BitwiseUtility
+        BitwiseUtility util = new BitwiseUtility(); // Create an instance of BitwiseUtility.
 
-        CheckersBitboard board = new CheckersBitboard();  // Create the checkers board
+        CheckersBitboard board = new CheckersBitboard(); // Create an instance of CheckersBitboard.
 
-        // Display the initial state of the board
+        // Display the initial state of the checkers board in binary and hexadecimal formats.
         board.displayBoardInBinary();
         board.displayBoardInHexadecimal();
 
-        // Example move: move black piece from position 40 to 33
+        // If the move to square 33 is legal, move a black piece from square 40 to 33.
         if (board.isMoveLegal(33)) {
-            board.movePiece(40, 33, true);  // Move black piece from 40 to 33
+            board.movePiece(40, 33, true);
             System.out.println("Moved black piece from 40 to 33.");
         }
 
-        // Example of a capture move: black piece capturing a white piece
+        // If a capture is possible, capture a white piece at square 23 by a black piece moving from 33 to 14.
         if (board.canCapture(33, 23, 14, true)) {
-            board.capturePiece(33, 23, 14, true);  // Perform the capture
+            board.capturePiece(33, 23, 14, true);
             System.out.println("Captured white piece at position 23.");
         }
 
-        // Display the updated state of the board
+        // Display the updated board state after the move and capture in binary and hexadecimal formats.
         board.displayBoardInBinary();
-        board.displayBoardInHex
+        board.displayBoardInHexadecimal();
+
+        // Demonstrating the BitwiseUtility methods.
+        System.out.println("Set Bit Example: " + util.setBit(0, 3)); // Set bit 3 in a 0 value.
+        System.out.println("Clear Bit Example: " + util.clearBit(15, 1)); // Clear bit 1 in value 15.
+        System.out.println("Toggle Bit Example: " + util.toggleBit(8, 3)); // Toggle bit 3 in value 8.
+        System.out.println("Get Bit Example: " + util.getBit(8, 3)); // Get the value of bit 3 in value 8.
+
+        // Demonstrating arithmetic operations.
+        System.out.println("Addition Example: " + util.add(5, 3)); // Add two numbers.
+        System.out.println("Subtraction Example: " + util.subtract(10, 4)); // Subtract two numbers.
+        System.out.println("Multiplication Example: " + util.multiply(5, 4)); // Multiply two numbers.
+        System.out.println("Division Example: " + util.divide(20, 4)); // Divide two numbers.
+
+        // Demonstrating conversion methods.
+        System.out.println("Decimal to Binary Example: " + util.decimalToBinary(10)); // Convert decimal to binary.
+        System.out.println("Decimal to Hexadecimal Example: " + util.decimalToHexadecimal(255)); // Convert decimal to hexadecimal.
+        System.out.println("Binary to Decimal Example: " + util.binaryToDecimal("1010")); // Convert binary to decimal.
+        System.out.println("Hexadecimal to Decimal Example: " + util.hexadecimalToDecimal("ff")); // Convert hexadecimal to decimal.
+    }
+}
